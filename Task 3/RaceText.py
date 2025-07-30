@@ -1,7 +1,7 @@
 from Verstappen import Verstappen
 from Mostafa import Mostafa
 
-class Race:
+class RaceText:
     def __init__(self):
         self.max = Verstappen()
         self.mostafa = Mostafa()
@@ -18,16 +18,17 @@ class Race:
                 tactic = input("Are you going to attack or defend, Max? Enter 1 for attack, 2 for defend: ")
                 if tactic == '1':
                     self.max._tireHealth = self.lastDamage
-                    move = int(input("What is your move, Max? Enter a number: "))
+                    move = int(input("What is your move, max? Enter a number: "))
                     while move < 1 or move > 3:
-                        move = int(input("Enter a number (1-3): ")) 
+                        move = int(input("Enter a number (1-3): "))
+                    move = input("What is your move, Max? Enter a number: ")
                     self.lastDamage = self.max.offence(int(move))
                     self.maxTurn = False
                 elif tactic == '2':
                     move = int(input("What is your move, Max? Enter a number: "))
-                    defence = self.max.defence(int(move))
                     while move < 1 or move > 2:
                         move = int(input("Enter a number (1-2): "))
+                    defence = self.max.defence(int(move))
                     self.max._tireHealth = (1 - defence) * self.lastDamage
                     self.maxTurn = False
                 else:
