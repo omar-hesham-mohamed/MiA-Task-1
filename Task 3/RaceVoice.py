@@ -6,6 +6,7 @@ import numpy as np
 import scipy.io.wavfile as wav
 import os
 from time import time
+import GroqAPI
 
 class RaceVoice:
     def __init__(self):
@@ -14,7 +15,7 @@ class RaceVoice:
         self.roundNo = 0
         self.maxTurn = True
         self.lastDamage = 0
-        self.client = Groq(api_key="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")
+        self.client = Groq(api_key=GroqAPI)
         self.sample_rate = 16000
         self.duration = 3
         self.channels = 1
