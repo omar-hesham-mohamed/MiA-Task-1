@@ -21,7 +21,6 @@ class RaceText:
                     move = int(input("What is your move, max? Enter a number: "))
                     while move < 1 or move > 3:
                         move = int(input("Enter a number (1-3): "))
-                    move = input("What is your move, Max? Enter a number: ")
                     self.lastDamage = self.max.offence(int(move))
                     self.maxTurn = False
                 elif tactic == '2':
@@ -42,7 +41,6 @@ class RaceText:
                     move = int(input("What is your move, Mostafa? Enter a number: "))
                     while move < 1 or move > 3:
                         move = int(input("Enter a number (1-3): "))
-                    move = input("What is your move, Mostafa? Enter a number: ")
                     self.lastDamage = self.mostafa.offence(int(move))
                     self.maxTurn = True
                 elif tactic == '2':
